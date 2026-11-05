@@ -1,0 +1,14 @@
+{
+  "name": "M²Gram Plugin",
+  "description": "Premium extension for exteraGram",
+  "plugins": [
+    {
+      "id": "m2gram",
+      "name": "M²Gram",
+      "version": "1.0.0",
+      "description": "Темы, приватность и инструменты сообщений",
+      "author": "M²Gram Team",
+      "file": "plugins/m2gram/m2gram.plugin"
+    }
+  ]
+}
