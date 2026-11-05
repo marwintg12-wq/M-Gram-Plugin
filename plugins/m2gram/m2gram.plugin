@@ -1,0 +1,79 @@
+from base_plugin import BasePlugin
+from ui.settings import Header, Switch, Selector, Input, Text
+
+__id__ = "m2gram"
+__name__ = "M²Gram"
+__description__ = "Расширение exteraGram с настройками и дополнительными инструментами"
+__author__ = "M²Gram Team"
+__version__ = "1.0.0"
+__icon__ = "exteraPlugins/1"
+__app_version__ = ">=12.5.1"
+__sdk_version__ = ">=1.4.4.3"
+__category__ = ["chats", "tools"]
+
+
+class M2GramPlugin(BasePlugin):
+
+    def on_plugin_load(self):
+        self.logger.info("M²Gram loaded")
+
+    def create_settings(self):
+        return [
+            Header(text="M²Gram PREMIUM"),
+
+            Switch(
+                key="premium_enabled",
+                text="Premium",
+                default=False,
+                subtext="Статус Premium"
+            ),
+
+            Selector(
+                key="theme",
+                text="Тема оформления",
+                default=0,
+                items=["Graphite", "Midnight", "Silver", "Dark"]
+            ),
+
+            Header(text="ПРИВАТНОСТЬ"),
+
+            Switch(
+                key="ghost_mode",
+                text="Ghost Mode",
+                default=False,
+                subtext="Настройка режима приватности"
+            ),
+
+            Switch(
+                key="privacy_notifications",
+                text="Приватные уведомления",
+                default=False
+            ),
+
+            Header(text="СООБЩЕНИЯ"),
+
+            Switch(
+                key="message_tools",
+                text="Дополнительные инструменты",
+                default=True
+            ),
+
+            Switch(
+                key="media_tools",
+                text="Инструменты медиа",
+                default=True
+            ),
+
+            Header(text="ПРОФИЛЬ"),
+
+            Input(
+                key="profile_tag",
+                text="Тег профиля",
+                default="M²Gram User"
+            ),
+
+            Text(
+                text="M²Gram Plugin v1.0.0",
+                subtext="Неофициальное расширение exteraGram"
+            )
+        ]
